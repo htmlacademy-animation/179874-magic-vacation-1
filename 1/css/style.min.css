@@ -1317,8 +1317,8 @@ img {
 
 .form__field {
   margin-right: 3rem;
-  padding: 0 5.6rem;
-  height: 6rem;
+  padding: 0;
+  height: 0;
   width: 0;
   text-transform: uppercase;
   font: inherit;
@@ -1328,9 +1328,11 @@ img {
   border: 0;
   border-radius: 3rem;
   outline: none;
-  transition: width 0.5s; }
-  body.loaded .form__field {
-    width: calc(100% - 21rem); }
+  transition: width 0.5s ease 0.1s, height 0.5s, padding 0.5s ease 0.5s; }
+  body.loaded .active .form__field {
+    width: calc(100% - 21rem);
+    height: 6rem;
+    padding: 0 5.6rem; }
   .form__field:focus {
     border: 1px solid #a67ee5; }
   @media (min-width: 2000px) {
@@ -1341,7 +1343,7 @@ img {
       width: 0;
       font-size: 24px;
       border-radius: 30px; }
-      body.loaded .form__field {
+      body.loaded .active .form__field {
         width: calc(100% - 210px); } }
   @media (orientation: portrait) {
     .form__field {
@@ -1350,12 +1352,12 @@ img {
       width: 0;
       height: 4rem;
       font-size: 1.6rem; }
-      body.loaded .form__field {
+      body.loaded .active .form__field {
         width: calc(100% - 5rem); } }
   @media (max-width: 1024px) and (orientation: landscape) {
     .form__field {
       width: 0; }
-      body.loaded .form__field {
+      body.loaded .active .form__field {
         width: calc(100% - 9rem); } }
   @media (max-width: 768px) and (orientation: landscape) {
     .form__field {
@@ -1364,7 +1366,7 @@ img {
       width: 0;
       height: 4rem;
       font-size: 1.6rem; }
-      body.loaded .form__field {
+      body.loaded .active .form__field {
         width: calc(100% - 5rem); } }
 
 .form__button {
@@ -1606,7 +1608,7 @@ img {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s, transform 0.5s; }
-  body.loaded .intro__message {
+  body.loaded .active .intro__message {
     opacity: 1;
     transform: translateY(0px); }
   @media (min-width: 2000px) {
@@ -1881,7 +1883,8 @@ img {
       height: 2px;
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: auto;
+      right: 0;
       background-color: #ffffff;
       transition: width 0.3s, background-color 0.3s; }
       @media (max-width: 1024px) and (orientation: portrait) {
@@ -1903,6 +1906,8 @@ img {
       transition: color 0.3s; }
       .page-header__menu a:hover::after, .page-header__menu a:focus::after {
         width: 100%;
+        left: 0;
+        right: auto;
         background-color: #a67ee5;
         transition: width 0.3s, background-color 0.3s; }
 
@@ -2970,13 +2975,14 @@ img {
   line-height: 2rem;
   opacity: 0;
   transform: translatex(30px);
-  transition: opacity 0.5s, transform 0.5s; }
-  body.loaded .slider__item-text {
+  transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s; }
+  body.loaded .active .swiper-slide-active .slider__item-text,
+  body.loaded .active .swiper-slide-active + .swiper-slide .slider__item-text {
     opacity: 1;
     transform: translateX(0px); }
   .slider__item:nth-child(2n) .slider__item-text {
     transition-property: opacity, transform;
-    transition-delay: 0.3s; }
+    transition-delay: 0.8s; }
   @media (min-width: 2000px) {
     .slider__item-text {
       margin-top: 36px;
