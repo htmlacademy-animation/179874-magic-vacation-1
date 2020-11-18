@@ -10627,8 +10627,8 @@ const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8_
 fullPageScroll.init();
 
 // For on load transition
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
+window.addEventListener(`load`, () => {
+  document.body.classList.add(`loaded`);
 });
 
 
