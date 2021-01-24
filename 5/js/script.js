@@ -10368,10 +10368,6 @@ class FullPageScroll {
       this.activeScreen = Math.max(0, --this.activeScreen);
     }
   }
-
-  animatePageTitle(text) {
-    
-  }
 }
 
 
@@ -10694,16 +10690,16 @@ __webpack_require__.r(__webpack_exports__);
       * interval
       * (wordIdx / nodeWords.length);
 
-    letters.reduce((wordWrapper, letter, letterIdx) => {
+    letters.reduce((wrapper, letter, letterIdx) => {
       const letterWrapper = document.createElement(`span`);
 
       letterWrapper.classList.add(`letter`);
       letterWrapper.textContent = letter;
       letterWrapper.style.animationDelay = wordInterval + lettersOrder[letterIdx] * interval + `s`;
 
-      wordWrapper.appendChild(letterWrapper);
+      wrapper.appendChild(letterWrapper);
 
-      return wordWrapper;
+      return wrapper;
     }, wordWrapper);
 
     wordWrapper.classList.add(`word`);
@@ -10715,6 +10711,7 @@ __webpack_require__.r(__webpack_exports__);
   node.innerHTML = ``;
   node.appendChild(animatedText);
 });
+
 
 /***/ }),
 
