@@ -10651,11 +10651,11 @@ window.addEventListener(`load`, () => {
 });
 
 // animate titles letters
-const animationElements = document.querySelectorAll(`.js-animate-letters`);
-const introDateElem = document.querySelector(`.intro__info .js-animate-letters`);
+const animationNodes = document.querySelectorAll(`.js-animate-letters`);
+const introDateNode = document.querySelector(`.intro__info .js-animate-letters`);
 
-animationElements.forEach((elem) => Object(_utils_animate_letters_js__WEBPACK_IMPORTED_MODULE_9__["default"])(elem, 0.5));
-Object(_utils_animate_letters_js__WEBPACK_IMPORTED_MODULE_9__["default"])(introDateElem, 1.5);
+animationNodes.forEach((node) => Object(_utils_animate_letters_js__WEBPACK_IMPORTED_MODULE_9__["default"])(node, 0.5));
+Object(_utils_animate_letters_js__WEBPACK_IMPORTED_MODULE_9__["default"])(introDateNode, 1.5);
 
 
 /***/ }),
