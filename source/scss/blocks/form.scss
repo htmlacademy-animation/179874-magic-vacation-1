@@ -32,8 +32,8 @@
 
 .form__field {
   margin-right: 3rem;
-  padding: 0;
-  height: 0;
+  padding: 0 5.6rem;
+  height: 6rem;
   width: 0;
   text-transform: uppercase;
   font: inherit;
@@ -43,12 +43,12 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  transition: width 0.5s ease 0.1s, height 0.5s, padding 0.5s ease 0.5s;
+  opacity: 0;
+  transition: opacity 0.5s ease 1s, width 0.5s ease 1s;
 
   body.loaded .active & {
     width: calc(100% - 21rem);
-    height: 6rem;
-    padding: 0 5.6rem;
+    opacity: 1;
   }
 
   &:focus {
@@ -103,6 +103,18 @@
 
 .form__button {
   width: 21rem;
+  color: $c-light;
+  opacity: 0;
+  animation: show-button 1s ease 0.5s forwards;
+
+  @keyframes show-button {
+    50% {
+      opacity: 1;
+    }
+    100% {
+      color: $c-dark;
+    }
+  }
 
   @media (orientation: portrait) {
     position: relative;
@@ -150,7 +162,16 @@
 
 .form--result {
   .form__field {
-    width: calc(100% - 31rem);
+    width: 0;
+    opacity: 0;
+    animation: show-result-field 0.5s ease 1s forwards;
+
+    @keyframes show-result-field {
+      to {
+        width: calc(100% - 31rem);
+        opacity: 1;
+      }
+    }
 
     @media (min-width: $stop-scaling) {
       width: calc(100% - 310px);
