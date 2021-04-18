@@ -27,6 +27,15 @@ social();
 // page scroll
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+document.body.addEventListener('screenChanged', () => {
+  const {classList} = document.body;
+
+  classList.forEach(klass => {
+    if (klass !== 'loaded') {
+      document.body.classList.remove(klass)
+    };
+  });
+});
 
 // onload
 window.addEventListener(`load`, () => {
