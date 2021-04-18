@@ -1,11 +1,45 @@
 import Swiper from "swiper";
 
+
 export default () => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
-  const setSlider = function () {
+  const emitSliderChangeEvent = function(sliderId) {
+    let sliderColor;
+
+    if (sliderId === 0) {
+      sliderColor = ``;
+    } else if (sliderId === 2) {
+      sliderColor = `dark-blue`;
+    } else if (sliderId === 4) {
+      sliderColor = `light-blue`;
+    } else if (sliderId === 6) {
+      sliderColor = ``;
+    }
+
+    const event = new CustomEvent(`slideChange`, {
+      detail: {sliderColor},
+    });
+
+    sliderContainer.dispatchEvent(event);
+  };
+
+  const onSliderChange = function(evt) {
+    const {sliderColor} = evt.detail;
+    const {classList} = document.body;
+
+    classList.forEach(klass => {
+      if (klass !== 'loaded') {
+        document.body.classList.remove(klass)
+      };
+    });
+
+    document.body.classList.add(sliderColor);
+  };
+
+  const setSlider = function() {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new Swiper(`.js-slider`, {
         pagination: {
@@ -60,6 +94,8 @@ export default () => {
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
             }
+
+            emitSliderChangeEvent(storySlider.activeIndex);
           },
           resize: () => {
             storySlider.update();
@@ -77,6 +113,8 @@ export default () => {
     }
     setSlider();
   });
+
+  sliderContainer.addEventListener('slideChange', onSliderChange);
 
   setSlider();
 };
