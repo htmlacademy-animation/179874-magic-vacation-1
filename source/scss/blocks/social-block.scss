@@ -78,30 +78,28 @@
   }
 
   &:focus {
-    color: $c-light;
+    color: $c-purple;
     outline: none;
     transition: color 0.5s;
 
     body.dark-blue & {
-      color: $c-light;
+      color: $c-light-blue;
     }
   
     body.light-blue & {
-      color: $c-light;
+      color: $c-dark-blue;
     }
 
     &::before {
-      background-color: $c-purple;
+      background-color: $c-light;
       border-color: $c-purple;
       transition: all 0.5s;
 
       body.dark-blue & {
-        background-color: $c-light-blue;
         border-color: $c-light-blue;
       }
     
       body.light-blue & {
-        background-color: $c-dark-blue;
         border-color: $c-dark-blue;
       }
     }
@@ -134,12 +132,30 @@
     color: $c-light;
     transition: color 0.5s;
 
+    body.dark-blue & {
+      color: $c-light;
+    }
+  
+    body.light-blue & {
+      color: $c-light;
+    }
+
     &::before {
       width: 100%;
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
       transition: all 0.2s;
+
+      body.dark-blue & {
+        background-color: $c-light-blue;
+        border-color: $c-light-blue;
+      }
+    
+      body.light-blue & {
+        background-color: $c-dark-blue;
+        border-color: $c-dark-blue;
+      }
     }
   }
 }
