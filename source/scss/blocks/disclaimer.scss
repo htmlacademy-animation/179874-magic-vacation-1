@@ -76,6 +76,16 @@
     padding: 0.9rem 0 0.7rem;
     text-decoration: underline;
     color: inherit;
+    animation: show-disclaimer 0.5s ease forwards;
+
+    @keyframes show-disclaimer {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
     @media (min-width: $stop-scaling) {
       padding: 9px 0 7px;
