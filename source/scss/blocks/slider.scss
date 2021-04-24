@@ -1,3 +1,12 @@
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .slider {
   position: relative;
   flex-grow: 1;
@@ -148,6 +157,7 @@
   justify-content: space-between;
   width: 17rem;
   z-index: 1;
+  animation: show 0.4s ease both 1.4s;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -247,6 +257,32 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  &--prev {
+    animation: rolling-prev-control 0.4s ease both 1.4s;
+
+    @keyframes rolling-prev-control {
+      from {
+        transform: translateX(-80px) rotate(-180deg);
+      }
+      to {
+        transform: translateX(0px) rotate(0deg);
+      }
+    }
+  }
+
+  &--next {
+    animation: rolling-next-control 0.4s ease both 1.4s;
+
+    @keyframes rolling-next-control {
+      from {
+        transform: translateX(80px) rotate(180deg);
+      }
+      to {
+        transform: translateX(0px) rotate(0deg);
+      }
+    }
+  }
 }
 
 .slider__pagination.swiper-pagination {
@@ -261,6 +297,7 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  animation: show 0.4s ease both 1.4s;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
