@@ -1,3 +1,12 @@
+@keyframes show-footer {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .screen {
   position: relative;
   display: flex;
@@ -36,12 +45,6 @@
   left: 0;
   right: 0;
   z-index: 1;
-  transform: translateY(50px);
-  transition: transform 0.5s cubic-bezier(0.41, 1.13, 0.9, 0.99);
-
-  body.loaded & {
-    transform: translateY(0px);
-  }
 }
 
 .screen__footer {
@@ -52,12 +55,7 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
-  transform: translateY(50px);
-  transition: transform 0.5s cubic-bezier(0.41, 1.13, 0.9, 0.99);
-
-  body.loaded & {
-    transform: translateY(0px);
-  }
+  animation: show-footer 0.5s cubic-bezier(0.41, 1.13, 0.9, 0.99) both;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
