@@ -291,8 +291,7 @@
           width: 100%;
           left: 0;
           right: auto;
-          transition: width 0.3s;
-          transition-delay: 0.3s;
+          transition: width 0.3s ease 0.3s, background-color 0.3s;
         }
       }
     }
@@ -303,12 +302,28 @@
       outline: none;
       transition: color 0.3s;
 
+      body.dark-blue & {
+        color: $c-light-blue;
+      }
+    
+      body.light-blue & {
+        color: $c-dark-blue;
+      }
+
       &::after {
         width: 100%;
         left: 0;
         right: auto;
         background-color: $c-purple;
         transition: width 0.3s, background-color 0.3s;
+
+        body.dark-blue & {
+          background-color: $c-light-blue;
+        }
+      
+        body.light-blue & {
+          background-color: $c-dark-blue;
+        }
       }
     }
   }
