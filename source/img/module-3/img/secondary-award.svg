@@ -5,7 +5,7 @@
     <animateTransform xlink:href="#award" begin="1.4s" attributeName="transform" type="translate" values="-7 -14; -15 -100; -95 -198" keyTimes="0; 0.75; 1" dur="3s" fill="freeze"/>
     <animateTransform xlink:href="#award" begin="1.4s" attributeName="transform" type="scale" values="0; 0.1; 0.1; 0.32; 0.32; 0.55; 0.55; 1" keyTimes="0; 0.07; 0.12; 0.42; 0.5; 0.72; 0.8; 1" calcMode="linear" dur="3s" fill="freeze" additive="sum"/>
     <animateTransform xlink:href="#award" begin="1.4s" attributeName="transform" type="rotate" values="0 128 390; 25 128 390; 0 128 390; -25 128 390; -20 128 390; -15 128 390; 15 128 390; 10 128 390; 0 128 390" keyTimes="0; 0.07; 0.12; 0.42; 0.45; 0.5; 0.72; 0.8; 1" dur="3s" fill="freeze" additive="sum"/>
-    <animateMotion xlink:href="#award" begin="1.4s" rotate="0" path="M179 61c24.19-9.24 29.8-15.84 29.42-20.44C207.18 25.43 138.73 1.78 96 34c-2.93 2.21-31.66 24.52-29 54 3.54 39.18 59.83 61.15 75.7 67.35 53.65 20.94 94.43 8.79 101.78 27.18 2.89 7.25.78 19.69-21.48 42.47" fill="freeze" dur="3s" keyPoints="0; 0.1; 0.1; 0.52; 0.52; 0.8; 0.8; 1" keyTimes="0; 0.07; 0.12; 0.42; 0.5; 0.72; 0.8; 1" calcMode="linear"/>
+    <animateMotion xlink:href="#award" begin="1.4s" rotate="0" path="M179,111c24.19-9.24,29.8-15.84,29.42-20.44C207.18,75.43,138.73,51.78,96,84c-2.93,2.21-31.66,24.52-29,54,3.54,39.18,59.83,61.15,75.7,67.35,53.65,20.94,94.43,8.79,101.78,27.18,2.89,7.25.78,19.69-21.48,42.47" fill="freeze" calcMode="linear"/>
   </defs>
 
   <g id="clouds">
