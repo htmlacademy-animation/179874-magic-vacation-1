@@ -10811,7 +10811,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/form.js */ "./source/js/modules/form.js");
 /* harmony import */ var _modules_social_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/social.js */ "./source/js/modules/social.js");
 /* harmony import */ var _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/full-page-scroll */ "./source/js/modules/full-page-scroll.js");
-/* harmony import */ var _utils_animate_letters_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/animate-letters.js */ "./source/js/utils/animate-letters.js");
+/* harmony import */ var _utils_animate_letters__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/animate-letters */ "./source/js/utils/animate-letters.js");
+/* harmony import */ var _utils_reload_svg_animation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utils/reload-svg-animation */ "./source/js/utils/reload-svg-animation.js");
 // modules
 
 
@@ -10824,7 +10825,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // utils
-
 
 
 
@@ -10841,13 +10841,18 @@ Object(_modules_social_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
 // page scroll
 const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__["default"]();
 fullPageScroll.init();
-document.body.addEventListener('screenChanged', () => {
+document.body.addEventListener(`screenChanged`, (evt) => {
+  const {screenName} = evt.detail;
   const {classList} = document.body;
 
-  classList.forEach(klass => {
-    if (klass !== 'loaded') {
-      document.body.classList.remove(klass)
-    };
+  if (screenName === `prizes`) {
+    Object(_utils_reload_svg_animation__WEBPACK_IMPORTED_MODULE_10__["default"])(`.prizes__item img`);
+  }
+
+  classList.forEach((klass) => {
+    if (klass !== `loaded`) {
+      document.body.classList.remove(klass);
+    }
   });
 });
 
@@ -10859,8 +10864,8 @@ window.addEventListener(`load`, () => {
 // animate titles letters
 const animationNodes = document.querySelectorAll(`.js-animate-letters`);
 const introDateNode = document.querySelector(`.intro__info .js-animate-letters`);
-animationNodes.forEach((node) => Object(_utils_animate_letters_js__WEBPACK_IMPORTED_MODULE_9__["default"])(node, 0.5));
-Object(_utils_animate_letters_js__WEBPACK_IMPORTED_MODULE_9__["default"])(introDateNode, 1.5);
+animationNodes.forEach((node) => Object(_utils_animate_letters__WEBPACK_IMPORTED_MODULE_9__["default"])(node, 0.5));
+Object(_utils_animate_letters__WEBPACK_IMPORTED_MODULE_9__["default"])(introDateNode, 1.5);
 
 
 /***/ }),
@@ -10918,6 +10923,37 @@ __webpack_require__.r(__webpack_exports__);
 
   node.innerHTML = ``;
   node.appendChild(animatedText);
+});
+
+
+/***/ }),
+
+/***/ "./source/js/utils/reload-svg-animation.js":
+/*!*************************************************!*\
+  !*** ./source/js/utils/reload-svg-animation.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * Change svg url.
+ * @param {string} selector
+ */
+/* harmony default export */ __webpack_exports__["default"] = (function (selector) {
+  const prizesItems = document.querySelectorAll(selector);
+
+  prizesItems.forEach((item) => {
+    const {src} = item;
+
+    if (src.match(`timestamp`)) {
+      const newSrc = src.replace(/\?timestamp=[0-9]+/g, `?timestamp=${Date.now()}`);
+      item.src = newSrc;
+    } else {
+      item.src = `${src}?timestamp=${Date.now()}`;
+    }
+  });
 });
 
 

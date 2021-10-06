@@ -2646,12 +2646,7 @@ body.light-blue .page-header__menu a:hover::after, body.light-blue .page-header_
   }
 }
 .prizes__item--cases .prizes__icon {
-  width: 18.8rem;
-}
-@media (min-width: 2000px) {
-  .prizes__item--cases .prizes__icon {
-    width: 188px;
-  }
+  width: 100%;
 }
 @media (max-width: 1024px) and (orientation: portrait) {
   .prizes__item--cases .prizes__icon {
