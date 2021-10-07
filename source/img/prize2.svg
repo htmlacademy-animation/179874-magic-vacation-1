@@ -63,6 +63,6 @@
   </g>
 
   <path id="ground" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M142 275h130">
-    <animate dur="0.5s" attributeName="d" values="M2 275h0;M2 275h270;M142 275h130" keyTimes="0; 0.7; 1" fill="freeze"/>
+    <animate begin="3.06s" dur="0.5s" attributeName="d" values="M2 275h0;M2 275h270;M142 275h130" keyTimes="0; 0.7; 1" fill="freeze"/>
   </path>
 </svg>
