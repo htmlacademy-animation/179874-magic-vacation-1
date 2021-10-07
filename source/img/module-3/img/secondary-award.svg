@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="60 -50 350 330">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -24 320 300" style="&#10;    background-color: #000;&#10;">
   <defs>
     <animateTransform id="leave-1-rotate" xlink:href="#leave-1" attributeName="transform" type="rotate" values="0, 254, 193; 3, 254, 193; -3, 254, 193; 2, 254, 193; -1, 254, 193; 0, 254, 193" dur="3.5s" calcMode="paced" repeatCount="indefinite" additive="sum"/>
     <animateTransform id="leave-2-rotate" xlink:href="#leave-2" begin="0s;leave-2-rotate.end+1.5s" attributeName="transform" type="rotate" values="0, 231, 274; 4, 231, 274; -3, 231, 274; 2, 231, 274; -1, 231, 274; 0, 231, 274" keyTimes="0; 0.18; 0.35; 0.5; 0.7; 1" dur="3s" additive="sum"/>
-    <animateTransform xlink:href="#award" begin="4.4s" attributeName="transform" type="translate" values="-7 -14; -15 -100; -95 -198" keyTimes="0; 0.75; 1" dur="3s" fill="freeze"/>
-    <animateTransform xlink:href="#award" begin="4.4s" attributeName="transform" type="scale" values="0; 0.1; 0.1; 0.32; 0.32; 0.55; 0.55; 1" keyTimes="0; 0.07; 0.12; 0.42; 0.5; 0.72; 0.8; 1" calcMode="linear" dur="3s" fill="freeze" additive="sum"/>
-    <animateTransform xlink:href="#award" begin="4.4s" attributeName="transform" type="rotate" values="0 128 390; 25 128 390; 0 128 390; -25 128 390; -20 128 390; -15 128 390; 15 128 390; 10 128 390; 0 128 390" keyTimes="0; 0.07; 0.12; 0.42; 0.45; 0.5; 0.72; 0.8; 1" dur="3s" fill="freeze" additive="sum"/>
-    <animateMotion xlink:href="#award" begin="4.4s" rotate="0" path="M179 61c24.19-9.24 29.8-15.84 29.42-20.44C207.18 25.43 138.73 1.78 96 34c-2.93 2.21-31.66 24.52-29 54 3.54 39.18 59.83 61.15 75.7 67.35 53.65 20.94 94.43 8.79 101.78 27.18 2.89 7.25.78 19.69-21.48 42.47" fill="freeze" dur="2s" calcMode="linear"/>
+    <animateTransform xlink:href="#award" begin="1.4s" attributeName="transform" type="translate" values="-7 -14; -15 -100; -95 -198" keyTimes="0; 0.75; 1" dur="3s" fill="freeze"/>
+    <animateTransform xlink:href="#award" begin="1.4s" attributeName="transform" type="scale" values="0; 0.1; 0.1; 0.32; 0.32; 0.55; 0.55; 1" keyTimes="0; 0.07; 0.12; 0.42; 0.5; 0.72; 0.8; 1" calcMode="linear" dur="3s" fill="freeze" additive="sum"/>
+    <animateTransform xlink:href="#award" begin="1.4s" attributeName="transform" type="rotate" values="0 128 390; 25 128 390; 0 128 390; -25 128 390; -20 128 390; -15 128 390; 15 128 390; 10 128 390; 0 128 390" keyTimes="0; 0.07; 0.12; 0.42; 0.45; 0.5; 0.72; 0.8; 1" dur="3s" fill="freeze" additive="sum"/>
+    <animateMotion xlink:href="#award" begin="1.4s" rotate="0" path="M179 61c24.19-9.24 29.8-15.84 29.42-20.44C207.18 25.43 138.73 1.78 96 34c-2.93 2.21-31.66 24.52-29 54 3.54 39.18 59.83 61.15 75.7 67.35 53.65 20.94 94.43 8.79 101.78 27.18 2.89 7.25.78 19.69-21.48 42.47" fill="freeze" dur="3s" keyPoints="0; 0.1; 0.1; 0.52; 0.52; 0.8; 0.8; 1" keyTimes="0; 0.07; 0.12; 0.42; 0.5; 0.72; 0.8; 1" calcMode="linear"/>
   </defs>
 
   <g id="clouds">
@@ -13,22 +13,22 @@
       <animate attributeType="CSS" attributeName="opacity" dur="0.2s" from="0" to="1" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="200 0; 0 0" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
 
-      <animate begin="4.6s" attributeType="CSS" attributeName="opacity" dur="0.4s" from="1" to="0" fill="freeze"/>
-      <animateTransform begin="4.6s" attributeName="transform" type="translate" values="0 0; 0 -10" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
+      <animate begin="1.6s" attributeType="CSS" attributeName="opacity" dur="0.4s" from="1" to="0" fill="freeze"/>
+      <animateTransform begin="1.6s" attributeName="transform" type="translate" values="0 0; 0 -10" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
     </path>
     <path fill="#fff" d="M221.64 65h-19.45a35.49 35.49 0 00-68-13.69A26.34 26.34 0 00121.3 48a26.72 26.72 0 00-24.8 17H81.35a10.5 10.5 0 000 21h140.3a10.5 10.5 0 000-21">
-      <animate begin="3.03s" attributeType="CSS" attributeName="opacity" dur="0.2s" from="0" to="1" fill="freeze"/>
-      <animateTransform begin="3.03s" attributeName="transform" type="translate" values="250 0; 0 0" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
+      <animate begin="0.03s" attributeType="CSS" attributeName="opacity" dur="0.2s" from="0" to="1" fill="freeze"/>
+      <animateTransform begin="0.03s" attributeName="transform" type="translate" values="250 0; 0 0" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
 
-      <animate begin="4.6s" attributeType="CSS" attributeName="opacity" dur="0.4s" from="1" to="0" fill="freeze"/>
-      <animateTransform begin="4.6s" attributeName="transform" type="translate" values="0 0; 0 -30" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
+      <animate begin="1.6s" attributeType="CSS" attributeName="opacity" dur="0.4s" from="1" to="0" fill="freeze"/>
+      <animateTransform begin="1.6s" attributeName="transform" type="translate" values="0 0; 0 -30" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
     </path>
     <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M258 91.28h39.78M286.05 81h22.2">
-      <animate begin="3.06s" attributeType="CSS" attributeName="opacity" dur="0.2s" from="0" to="1" fill="freeze"/>
-      <animateTransform begin="3.06s" attributeName="transform" type="translate" values="260 0; 0 0" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
+      <animate begin="0.06s" attributeType="CSS" attributeName="opacity" dur="0.2s" from="0" to="1" fill="freeze"/>
+      <animateTransform begin="0.06s" attributeName="transform" type="translate" values="260 0; 0 0" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
 
-      <animate begin="4.6s" attributeType="CSS" attributeName="opacity" dur="0.4s" from="1" to="0" fill="freeze"/>
-      <animateTransform begin="4.6s" attributeName="transform" type="translate" values="0 0; 0 -40" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
+      <animate begin="1.6s" attributeType="CSS" attributeName="opacity" dur="0.4s" from="1" to="0" fill="freeze"/>
+      <animateTransform begin="1.6s" attributeName="transform" type="translate" values="0 0; 0 -40" keySplines="0, 0.55, 0.45, 1" calcMode="spline" dur="0.5s"/>
     </path>
   </g>
 

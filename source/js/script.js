@@ -10,9 +10,8 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 
 // utils
-import animateLetters from './utils/animate-letters.js';
-
-
+import animateLetters from './utils/animate-letters';
+import reloadSvgAnimation from './utils/reload-svg-animation';
 
 // init modules
 mobileHeight();
@@ -27,13 +26,18 @@ social();
 // page scroll
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
-document.body.addEventListener('screenChanged', () => {
+document.body.addEventListener(`screenChanged`, (evt) => {
+  const {screenName} = evt.detail;
   const {classList} = document.body;
 
-  classList.forEach(klass => {
-    if (klass !== 'loaded') {
-      document.body.classList.remove(klass)
-    };
+  if (screenName === `prizes`) {
+    reloadSvgAnimation(`.prizes__item img`);
+  }
+
+  classList.forEach((klass) => {
+    if (klass !== `loaded`) {
+      document.body.classList.remove(klass);
+    }
   });
 });
 
