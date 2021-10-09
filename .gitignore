@@ -2,6 +2,7 @@
 .idea/
 .idea/*
 .vscode
+*.cpuprofile
 *.ai
 *.log
 *.pdf
