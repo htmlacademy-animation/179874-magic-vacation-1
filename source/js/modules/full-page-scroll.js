@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import NumbersAnimation from '../utils/numbers-animation';
 
 export default class FullPageScroll {
   constructor() {
@@ -42,6 +43,18 @@ export default class FullPageScroll {
       setTimeout(() => {
         this.changeVisibilityDisplay();
       }, 500);
+
+      setTimeout(() => {
+        new NumbersAnimation(`.prizes__desc b`, 0, 0, 1, 3).startTimer();
+      }, 500);
+
+      setTimeout(() => {
+        new NumbersAnimation(`.prizes__desc b`, 1, 0, 1, 7).startTimer();
+      }, 4500);
+
+      setTimeout(() => {
+        new NumbersAnimation(`.prizes__desc b`, 2, 11, 80, 900).startTimer();
+      }, 7500);
 
     } else {
       this.transitionScreen.classList.remove(`active`);

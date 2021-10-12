@@ -154,6 +154,10 @@
         width: 10rem;
       }
     }
+
+    .prizes__desc b {
+      width: 1ch;
+    }
   }
 
   &--cases {
@@ -184,6 +188,10 @@
         width: 7rem;
       }
     }
+
+    .prizes__desc b {
+      width: 1ch;
+    }
   }
 
   &--codes {
@@ -209,6 +217,11 @@
       @media (max-width: $mobile) and (orientation: landscape) {
         width: 10rem;
       }
+    }
+
+    .prizes__desc b {
+      width: 3ch;
+      text-align: right;
     }
   }
 }
