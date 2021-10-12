@@ -46,7 +46,7 @@ export default class FullPageScroll {
 
       setTimeout(() => {
         new NumbersAnimation(`.prizes__desc b`, 0, 0, 1, 3).startTimer();
-      }, 500);
+      }, 1200);
 
       setTimeout(() => {
         new NumbersAnimation(`.prizes__desc b`, 1, 0, 1, 7).startTimer();

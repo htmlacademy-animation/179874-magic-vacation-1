@@ -107,6 +107,27 @@
 .prizes__item {
   margin-left: 7.5rem;
 
+  animation-name: show-prize, pull-prize;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse;
+
+  @keyframes show-prize {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pull-prize {
+    0% {
+      transform: translateX(0);
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     margin-left: 75px;
   }
@@ -127,6 +148,9 @@
   }
 
   &--journeys {
+    transform: translateX(380px);
+    animation-delay: 0s, 0.5s;
+
     .prizes__icon {
       position: relative;
       left: -5.9rem;
@@ -162,6 +186,8 @@
 
   &--cases {
     margin-left: 7rem;
+    transform: translateX(0);
+    animation-delay: 3.5s, 4s;
 
     @media (min-width: $stop-scaling) {
       margin-left: 70px;
@@ -195,6 +221,9 @@
   }
 
   &--codes {
+    transform: translateX(100px);
+    animation-delay: 6.5s, 7s;
+
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
     }
