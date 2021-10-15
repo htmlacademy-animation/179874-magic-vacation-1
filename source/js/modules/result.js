@@ -1,3 +1,4 @@
+import WinScene from '../canvas-scenes/win-scene';
 
 export default () => {
   const showResultEls = document.querySelectorAll(`.js-show-result`);
@@ -25,6 +26,8 @@ export default () => {
         });
 
         targetEl.querySelector(`.result__title path animate`).beginElement();
+
+        const initScene = new WinScene();
       });
     });
 
