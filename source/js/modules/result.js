@@ -28,13 +28,20 @@ export default () => {
 
         targetEl.querySelector(`.result__title path animate`).beginElement();
 
-        // eslint-disable-next-line no-new
-        new WinScene();
+        switch (targetId) {
+          case `result`:
+            // eslint-disable-next-line no-new
+            new WinScene();
+            break;
 
-        setTimeout(() => {
-          // eslint-disable-next-line no-new
-          new LoseScene();
-        }, 1000);
+          case `result3`:
+            // eslint-disable-next-line no-new
+            new LoseScene();
+            break;
+
+          default:
+            break;
+        }
       });
     });
 
