@@ -26,8 +26,8 @@ const OBJECTS = Object.freeze({
   },
   crocodile: {
     imageId: `crocodile`,
-    x: 50,
-    y: 55,
+    x: 51,
+    y: 59,
     size: 80,
     transforms: {
       translateX: 200,
@@ -91,8 +91,8 @@ const OBJECTS = Object.freeze({
   },
   drop: {
     imageId: `drop`,
-    x: 47.5,
-    y: 58,
+    x: 48.5,
+    y: 61,
     size: 3,
     opacity: 0,
     transforms: {
@@ -181,8 +181,9 @@ export default class CrocodileScene extends Scene2D {
     this.animations.push(new Animation({
       func: (progress) => {
         this.objects.key.opacity = progress;
+        this.objects.key.size = OBJECTS[`key`].size * 0.5 * progress + OBJECTS[`key`].size * 0.5;
       },
-      duration: 1000,
+      duration: 300,
       easing: easings.easeInCubic
     }));
   }
@@ -316,13 +317,13 @@ export default class CrocodileScene extends Scene2D {
         this.objects.crocodile.transforms.translateY = -10 * progressReversed;
       },
       delay: 1750,
-      duration: 1000,
+      duration: 1500,
       easing: easings.easeInCubic
     }));
   }
 
   initDropAnimations() {
-    const delayStart = 3000;
+    const delayStart = 3500;
     const interval = 2500;
 
     this.dropAnimations = [];
