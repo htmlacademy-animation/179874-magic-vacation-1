@@ -5,12 +5,12 @@ import easings from '../utils/easings.js';
 const IMAGES_URLS = Object.freeze({
   key: `./img/module-4/lose-images/key.png`,
   crocodile: `./img/module-4/lose-images/crocodile.png`,
-  flamingo: `./img/module-4/lose-images/flamingo.png`,
-  watermelon: `./img/module-4/lose-images/watermelon.png`,
-  leaf: `./img/module-4/lose-images/leaf.png`,
-  snowflake: `./img/module-4/lose-images/snowflake.png`,
-  saturn: `./img/module-4/lose-images/saturn.png`,
   drop: `./img/module-4/lose-images/drop.png`,
+  flamingo: `./img/module-4/lose-images/flamingo.png`,
+  leaf: `./img/module-4/lose-images/leaf.png`,
+  saturn: `./img/module-4/lose-images/saturn.png`,
+  snowflake: `./img/module-4/lose-images/snowflake.png`,
+  watermelon: `./img/module-4/lose-images/watermelon.png`,
 });
 
 const OBJECTS = Object.freeze({
@@ -34,61 +34,6 @@ const OBJECTS = Object.freeze({
       translateY: 0,
     }
   },
-  flamingo: {
-    imageId: `flamingo`,
-    x: 55,
-    y: 50,
-    size: 15,
-    opacity: 0,
-    transforms: {
-      scaleX: 0,
-      scaleY: 0,
-    }
-  },
-  watermelon: {
-    imageId: `watermelon`,
-    x: 55,
-    y: 55,
-    size: 15,
-    opacity: 0,
-    transforms: {
-      scaleX: 0,
-      scaleY: 0,
-    }
-  },
-  leaf: {
-    imageId: `leaf`,
-    x: 55,
-    y: 50,
-    size: 15,
-    opacity: 0,
-    transforms: {
-      scaleX: 0,
-      scaleY: 0,
-    }
-  },
-  snowflake: {
-    imageId: `snowflake`,
-    x: 55,
-    y: 55,
-    size: 15,
-    opacity: 0,
-    transforms: {
-      scaleX: 0,
-      scaleY: 0,
-    }
-  },
-  saturn: {
-    imageId: `saturn`,
-    x: 55,
-    y: 55,
-    size: 15,
-    opacity: 0,
-    transforms: {
-      scaleX: 0,
-      scaleY: 0,
-    }
-  },
   drop: {
     imageId: `drop`,
     x: 48.5,
@@ -99,6 +44,54 @@ const OBJECTS = Object.freeze({
       scaleX: 1,
       scaleY: 0,
     }
+  },
+  flamingo: {
+    imageId: `flamingo`,
+    x: 50,
+    y: 50,
+    size: 0,
+    opacity: 1,
+    transforms: {
+      translateY: 0
+    }
+  },
+  leaf: {
+    imageId: `leaf`,
+    x: 50,
+    y: 50,
+    size: 0,
+    opacity: 1,
+    transforms: {
+      translateY: 0
+    }
+  },
+  saturn: {
+    imageId: `saturn`,
+    x: 50,
+    y: 50,
+    size: 0,
+    opacity: 1,
+    transforms: {
+      translateY: 0
+    }
+  },
+  snowflake: {
+    imageId: `snowflake`,
+    x: 50,
+    y: 50,
+    size: 0,
+    opacity: 1,
+    transforms: {
+      rotate: 0
+    }
+  },
+  watermelon: {
+    imageId: `watermelon`,
+    x: 50,
+    y: 50,
+    size: 0,
+    opacity: 1,
+    transforms: {}
   },
 });
 
@@ -188,126 +181,6 @@ export default class CrocodileScene extends Scene2D {
     }));
   }
 
-  initFlamingoAnimations() {
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.flamingo.opacity = progress;
-        this.objects.flamingo.transforms.scaleX = progress;
-        this.objects.flamingo.transforms.scaleY = progress;
-        this.objects.flamingo.transforms.translateX = -30 * progress;
-        this.objects.flamingo.transforms.translateY = -10 * progress;
-      },
-      delay: 1000,
-      duration: 1000,
-      easing: easings.easeInCubic
-    }));
-
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.flamingo.transforms.translateY = 100 * progress;
-      },
-      delay: 2250,
-      duration: 1500,
-      easing: easings.easeOutExpo
-    }));
-  }
-
-  initWatermelonAnimations() {
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.watermelon.opacity = progress;
-        this.objects.watermelon.transforms.scaleX = progress;
-        this.objects.watermelon.transforms.scaleY = progress;
-        this.objects.watermelon.transforms.translateX = -30 * progress;
-        this.objects.watermelon.transforms.translateY = 10 * progress;
-      },
-      delay: 1000,
-      duration: 1000,
-      easing: easings.easeInCubic
-    }));
-
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.watermelon.transforms.translateY = 100 * progress;
-      },
-      delay: 2250,
-      duration: 1500,
-      easing: easings.easeOutExpo
-    }));
-  }
-
-  initLeafAnimations() {
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.leaf.opacity = progress;
-        this.objects.leaf.transforms.scaleX = progress;
-        this.objects.leaf.transforms.scaleY = progress;
-        this.objects.leaf.transforms.translateX = 30 * progress;
-        this.objects.leaf.transforms.translateY = -10 * progress;
-      },
-      delay: 1000,
-      duration: 1000,
-      easing: easings.easeInCubic
-    }));
-
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.leaf.transforms.translateY = 100 * progress;
-      },
-      delay: 2250,
-      duration: 1500,
-      easing: easings.easeOutExpo
-    }));
-  }
-
-  initSnowflakeAnimations() {
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.snowflake.opacity = progress;
-        this.objects.snowflake.transforms.scaleX = progress;
-        this.objects.snowflake.transforms.scaleY = progress;
-        this.objects.snowflake.transforms.translateX = 15 * progress;
-        this.objects.snowflake.transforms.translateY = -5 * progress;
-      },
-      delay: 1000,
-      duration: 1000,
-      easing: easings.easeInCubic
-    }));
-
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.snowflake.transforms.translateY = 100 * progress;
-      },
-      delay: 2250,
-      duration: 1500,
-      easing: easings.easeOutExpo
-    }));
-  }
-
-  initSaturnAnimations() {
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.saturn.opacity = progress;
-        this.objects.saturn.transforms.scaleX = progress;
-        this.objects.saturn.transforms.scaleY = progress;
-        this.objects.saturn.transforms.translateX = 30 * progress;
-        this.objects.saturn.transforms.translateY = 10 * progress;
-      },
-      delay: 1000,
-      duration: 1000,
-      easing: easings.easeInCubic
-    }));
-
-    this.animations.push(new Animation({
-      func: (progress) => {
-        this.objects.saturn.transforms.translateY = 100 * progress;
-      },
-      delay: 2250,
-      duration: 1500,
-      easing: easings.easeOutExpo
-    }));
-  }
-
   initCrocodileAnimations() {
     this.animations.push(new Animation({
       func: (progress) => {
@@ -316,14 +189,14 @@ export default class CrocodileScene extends Scene2D {
         this.objects.crocodile.transforms.translateX = 50 * progressReversed;
         this.objects.crocodile.transforms.translateY = -10 * progressReversed;
       },
-      delay: 1750,
+      delay: 1000,
       duration: 1500,
       easing: easings.easeInCubic
     }));
   }
 
   initDropAnimations() {
-    const delayStart = 3500;
+    const delayStart = 3000;
     const interval = 2500;
 
     this.dropAnimations = [];
@@ -380,5 +253,160 @@ export default class CrocodileScene extends Scene2D {
     setTimeout(() => {
       this.initDropAnimations();
     }, interval);
+  }
+
+  initFlamingoAnimations() {
+    this.animations.push(new Animation({
+      func: (progress) => {
+        const {flamingo} = this.objects;
+
+        flamingo.size = 20 * progress;
+        flamingo.transforms.rotate = 50 * (1 - progress);
+        flamingo.transforms.translateX = -25 * progress;
+        flamingo.transforms.translateY = -12 * progress;
+      },
+      duration: 1000,
+      delay: 200,
+      easing: easings.easeOutCubic,
+      callback: () => {
+        const animation = new Animation({
+          func: (progress) => {
+            const flamingo = this.objects.flamingo;
+
+            flamingo.transforms.translateY = -12 + 62 * progress;
+            flamingo.opacity = (1 - progress);
+          },
+          duration: 800,
+          easing: easings.easeInCubic
+        });
+
+        animation.start();
+        this.animations.push(animation);
+      }
+    }));
+  }
+
+  initLeafAnimations() {
+    const {leaf} = this.objects;
+
+    this.animations.push(new Animation({
+      func: (progress) => {
+        const progressReversed = 1 - progress;
+
+        leaf.size = 25 * progress;
+        leaf.transforms.rotate = 50 * progressReversed;
+        leaf.transforms.translateX = 30 * progress;
+        leaf.transforms.translateY = -20 * progress;
+      },
+      duration: 1000,
+      delay: 200,
+      easing: easings.easeOutCubic,
+      callback: () => {
+        const animation = new Animation({
+          func: (progress) => {
+            leaf.transforms.translateY = -20 + 70 * progress;
+            leaf.opacity = (1 - progress);
+          },
+          duration: 800,
+          easing: easings.easeInCubic
+        });
+
+        animation.start();
+        this.animations.push(animation);
+      }
+    }));
+  }
+
+  initSaturnAnimations() {
+    const {saturn} = this.objects;
+
+    this.animations.push(new Animation({
+      func: (progress) => {
+        const progressReversed = 1 - progress;
+
+        saturn.size = 20 * progress;
+        saturn.transforms.rotate = 50 * progressReversed;
+        saturn.transforms.translateX = 28 * progress;
+        saturn.transforms.translateY = 20 * progress;
+      },
+      duration: 1000,
+      delay: 200,
+      easing: easings.easeOutCubic,
+      callback: () => {
+        const animation = new Animation({
+          func: (progress) => {
+            saturn.transforms.translateY = 20 + 30 * progress;
+            saturn.opacity = (1 - progress);
+          },
+          duration: 800,
+          easing: easings.easeInCubic
+        });
+
+        animation.start();
+        this.animations.push(animation);
+      }
+    }));
+  }
+
+  initSnowflakeAnimations() {
+    const {snowflake} = this.objects;
+
+    this.animations.push(new Animation({
+      func: (progress) => {
+        const progressReversed = 1 - progress;
+
+        snowflake.size = 15 * progress;
+        snowflake.transforms.rotate = 50 * progressReversed;
+        snowflake.transforms.translateX = 20 * progress;
+        snowflake.transforms.translateY = 5 * progress;
+      },
+      duration: 1000,
+      delay: 200,
+      easing: easings.easeOutCubic,
+      callback: () => {
+        const animation = new Animation({
+          func: (progress) => {
+            snowflake.transforms.translateY = 5 + 45 * progress;
+            snowflake.opacity = (1 - progress);
+          },
+          duration: 800,
+          easing: easings.easeInCubic
+        });
+
+        animation.start();
+        this.animations.push(animation);
+      }
+    }));
+  }
+
+  initWatermelonAnimations() {
+    const {watermelon} = this.objects;
+
+    this.animations.push(new Animation({
+      func: (progress) => {
+        const progressReversed = 1 - progress;
+
+        watermelon.size = 20 * progress;
+        watermelon.transforms.rotate = 50 * progressReversed;
+        watermelon.transforms.translateX = -35 * progress;
+        watermelon.transforms.translateY = 20 * progress;
+      },
+      duration: 1000,
+      delay: 200,
+      easing: easings.easeOutCubic,
+      callback: () => {
+        const animation = new Animation({
+          func: (progress) => {
+            watermelon.transforms.translateY = 20 + 30 * progress;
+            watermelon.opacity = (1 - progress);
+          },
+          duration: 800,
+          easing: easings.easeInCubic
+        });
+
+        animation.start();
+        this.animations.push(animation);
+      }
+    }));
   }
 }
