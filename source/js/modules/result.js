@@ -1,4 +1,5 @@
 import WinScene from '../canvas-scenes/win-scene';
+import LoseScene from '../canvas-scenes/lose-scene';
 
 export default () => {
   const showResultEls = document.querySelectorAll(`.js-show-result`);
@@ -27,7 +28,20 @@ export default () => {
 
         targetEl.querySelector(`.result__title path animate`).beginElement();
 
-        const initScene = new WinScene();
+        switch (targetId) {
+          case `result`:
+            // eslint-disable-next-line no-new
+            new WinScene();
+            break;
+
+          case `result3`:
+            // eslint-disable-next-line no-new
+            new LoseScene();
+            break;
+
+          default:
+            break;
+        }
       });
     });
 
