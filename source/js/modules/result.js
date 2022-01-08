@@ -1,5 +1,5 @@
-import WinScene from '../canvas-scenes/win-scene';
-import LoseScene from '../canvas-scenes/lose-scene';
+import WinScene from '../2d-scenes/win-scene';
+import LoseScene from '../2d-scenes/lose-scene';
 
 export default () => {
   const showResultEls = document.querySelectorAll(`.js-show-result`);
