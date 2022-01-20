@@ -1,11 +1,13 @@
 import Swiper from "swiper";
-
+import SliderScene from '../3d-scenes/slider-scene';
 
 export default () => {
+  const sliderScene = new SliderScene();
+
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
 
-  const emitSliderChangeEvent = function(sliderId) {
+  const emitSliderChangeEvent = function (sliderId) {
     let sliderColor;
 
     if (sliderId === 0) {
@@ -25,29 +27,29 @@ export default () => {
     sliderContainer.dispatchEvent(event);
   };
 
-  const onSliderChange = function(evt) {
+  const onSliderChange = function (evt) {
     const {sliderColor} = evt.detail;
     const {classList} = document.body;
 
-    classList.forEach(klass => {
-      if (klass !== 'loaded') {
-        document.body.classList.remove(klass)
-      };
+    classList.forEach((klass) => {
+      if (klass !== `loaded`) {
+        document.body.classList.remove(klass);
+      }
     });
 
-    if (sliderColor) document.body.classList.add(sliderColor);
+    if (sliderColor) {
+      document.body.classList.add(sliderColor);
+    }
   };
 
-  const resetSlider = function() {
+  const resetSlider = function () {
     if (storySlider) {
       storySlider.destroy();
     }
     setSlider();
-  }
+  };
 
-  const setSlider = function() {
-    sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
-
+  const setSlider = function () {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new Swiper(`.js-slider`, {
         pagination: {
@@ -94,13 +96,13 @@ export default () => {
         on: {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
-              sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
+              sliderScene.setBackground(0);
             } else if (storySlider.activeIndex === 2) {
-              sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
+              sliderScene.setBackground(1);
             } else if (storySlider.activeIndex === 4) {
-              sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
+              sliderScene.setBackground(2);
             } else if (storySlider.activeIndex === 6) {
-              sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
+              sliderScene.setBackground(3);
             }
 
             emitSliderChangeEvent(storySlider.activeIndex);
@@ -115,15 +117,22 @@ export default () => {
     }
   };
 
-  document.body.addEventListener('screenChanged', (evt) => {
+  document.body.addEventListener(`screenChanged`, (evt) => {
+    const {screenName} = evt.detail;
     const isFirstSlide = storySlider.activeIndex === 0;
 
     if (!isFirstSlide) {
       resetSlider();
     }
+
+    if (screenName === `story`) {
+      sliderScene.start();
+    } else {
+      sliderScene.stop();
+    }
   });
 
-  sliderContainer.addEventListener('slideChanged', onSliderChange);
+  sliderContainer.addEventListener(`slideChanged`, onSliderChange);
   window.addEventListener(`resize`, resetSlider);
 
   setSlider();

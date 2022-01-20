@@ -207,7 +207,7 @@
     body.dark-blue & {
       border-color: $c-light-blue;
     }
-  
+
     body.light-blue & {
       border-color: $c-dark-blue;
     }
@@ -340,4 +340,11 @@
       background-color: $c-light;
     }
   }
+}
+
+.slider-scene {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
 }

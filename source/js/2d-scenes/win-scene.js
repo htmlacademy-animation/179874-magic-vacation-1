@@ -4,12 +4,12 @@ import easings from '../utils/easings.js';
 
 
 const IMAGES_URLS = Object.freeze({
-  plane: `./img/airplane.png`,
-  tree: `./img/tree.png`,
-  tree2: `./img/tree-2.png`,
-  ice: `./img/ice.png`,
-  seaCalf: `./img/sea-calf-2.png`,
-  snowflake: `./img/snowflake.png`
+  plane: `./img/module-4/win-primary-images/airplane.png`,
+  tree: `./img/module-4/win-primary-images/tree.png`,
+  tree2: `./img/module-4/win-primary-images/tree 2.png`,
+  ice: `./img/module-4/win-primary-images/ice.png`,
+  seaCalf: `./img/module-4/win-primary-images/sea-calf-2.png`,
+  snowflake: `./img/module-4/win-primary-images/snowflake.png`
 });
 
 
