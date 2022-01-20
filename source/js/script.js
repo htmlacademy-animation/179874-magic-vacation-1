@@ -8,11 +8,9 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import game from './modules/game.js';
+import prizes from './modules/prizes.js';
+import intro from './modules/intro.js';
 import FullPageScroll from './modules/full-page-scroll';
-
-// utils
-import animateLetters from './utils/animate-letters';
-import reloadSvgAnimation from './utils/reload-svg-animation';
 
 // init modules
 mobileHeight();
@@ -24,17 +22,21 @@ result();
 form();
 social();
 game();
+prizes();
+intro();
 
-// page scroll
+// init page scroll
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
-document.body.addEventListener(`screenChanged`, (evt) => {
-  const {screenName} = evt.detail;
-  const {classList} = document.body;
 
-  if (screenName === `prizes`) {
-    reloadSvgAnimation(`.prizes__item img`);
-  }
+// add loaded
+window.addEventListener(`load`, () => {
+  document.body.classList.add(`loaded`);
+});
+
+// clean loaded
+document.body.addEventListener(`screenChanged`, (evt) => {
+  const {classList} = document.body;
 
   classList.forEach((klass) => {
     if (klass !== `loaded`) {
@@ -43,13 +45,3 @@ document.body.addEventListener(`screenChanged`, (evt) => {
   });
 });
 
-// onload
-window.addEventListener(`load`, () => {
-  document.body.classList.add(`loaded`);
-});
-
-// animate titles letters
-const animationNodes = document.querySelectorAll(`.js-animate-letters`);
-const introDateNode = document.querySelector(`.intro__info .js-animate-letters`);
-animationNodes.forEach((node) => animateLetters(node, 0.5));
-animateLetters(introDateNode, 1.5);
