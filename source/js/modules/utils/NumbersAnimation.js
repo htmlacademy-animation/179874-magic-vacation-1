@@ -1,10 +1,9 @@
 export default class NumbersAnimation {
-  constructor(selector, elemIndex, start, step, end) {
+  constructor(selector, elemIndex, step, end) {
     this.selector = selector;
-    this.element = document.querySelectorAll(this.selector);
+    this.elements = document.querySelectorAll(this.selector);
     this.index = elemIndex;
-    this.start = start;
-    this.currentNum = this.start;
+    this.currentNum = 0;
     this.step = step;
     this.end = end;
     this.fps = 12;
@@ -46,6 +45,6 @@ export default class NumbersAnimation {
   }
 
   setNum(number) {
-    this.element[this.index].innerText = `${number}`;
+    this.elements[this.index].innerText = `${number}`;
   }
 }
