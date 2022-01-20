@@ -1,4 +1,4 @@
-import reloadSvgAnimation from '../utils/reload-svg-animation';
+import reloadSvgAnimation from './utils/reload-svg-animation';
 
 export default () => {
   document.body.addEventListener(`screenChanged`, (evt) => {

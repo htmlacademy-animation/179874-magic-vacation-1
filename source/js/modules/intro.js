@@ -1,4 +1,4 @@
-import animateLetters from '../utils/animate-letters';
+import animateLetters from './utils/animate-letters';
 
 export default () => {
   const animationNodes = document.querySelectorAll(`.js-animate-letters`);

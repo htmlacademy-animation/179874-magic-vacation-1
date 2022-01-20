@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-import NumbersAnimation from '../utils/numbers-animation';
+import NumbersAnimation from './utils/NumbersAnimation';
 
 export default class FullPageScroll {
   constructor() {
