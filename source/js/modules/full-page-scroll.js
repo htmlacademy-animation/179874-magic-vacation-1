@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-import NumbersAnimation from '../utils/numbers-animation';
+import NumbersAnimation from './utils/NumbersAnimation';
 
 export default class FullPageScroll {
   constructor() {
@@ -37,6 +37,8 @@ export default class FullPageScroll {
   }
 
   changePageDisplay() {
+    const prizesCountSelector = `.prizes__desc b`;
+
     if (this.activeScreen === this.PRIZES_SCREEN_INDEX) {
       this.transitionScreen.classList.add(`active`);
 
@@ -45,20 +47,25 @@ export default class FullPageScroll {
       }, 500);
 
       setTimeout(() => {
-        new NumbersAnimation(`.prizes__desc b`, 0, 0, 1, 3).startTimer();
+        new NumbersAnimation(prizesCountSelector, 0, 1, 3).startTimer();
       }, 1200);
 
       setTimeout(() => {
-        new NumbersAnimation(`.prizes__desc b`, 1, 0, 1, 7).startTimer();
+        new NumbersAnimation(prizesCountSelector, 1, 1, 7).startTimer();
       }, 4500);
 
       setTimeout(() => {
-        new NumbersAnimation(`.prizes__desc b`, 2, 11, 80, 900).startTimer();
+        new NumbersAnimation(prizesCountSelector, 2, 80, 900).startTimer();
       }, 7500);
 
     } else {
       this.transitionScreen.classList.remove(`active`);
       this.changeVisibilityDisplay();
+
+      const prizesCountElems = document.querySelectorAll(prizesCountSelector);
+      prizesCountElems.forEach((elem) => {
+        elem.innerText = 0;
+      });
     }
 
     this.changeActiveMenuItem();

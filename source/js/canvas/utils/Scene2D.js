@@ -72,6 +72,8 @@ export default class Scene2D {
       if (Object.prototype.hasOwnProperty.call(imagesUrls, name)) {
         const image = new Image();
 
+        debugger
+
         image.addEventListener(`load`, () => {
           loadingCounter++;
 

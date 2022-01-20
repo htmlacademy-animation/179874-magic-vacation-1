@@ -1,8 +1,8 @@
 import Swiper from "swiper";
-import SliderScene from '../3d-scenes/slider-scene';
+import StoryScene from '../threejs/StoryScene';
 
 export default () => {
-  const sliderScene = new SliderScene();
+  const storyScene = new StoryScene();
 
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
@@ -96,13 +96,13 @@ export default () => {
         on: {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
-              sliderScene.setBackground(0);
+              storyScene.changeScene(0);
             } else if (storySlider.activeIndex === 2) {
-              sliderScene.setBackground(1);
+              storyScene.changeScene(1);
             } else if (storySlider.activeIndex === 4) {
-              sliderScene.setBackground(2);
+              storyScene.changeScene(2);
             } else if (storySlider.activeIndex === 6) {
-              sliderScene.setBackground(3);
+              storyScene.changeScene(3);
             }
 
             emitSliderChangeEvent(storySlider.activeIndex);
@@ -126,9 +126,9 @@ export default () => {
     }
 
     if (screenName === `story`) {
-      sliderScene.start();
+      storyScene.start();
     } else {
-      sliderScene.stop();
+      storyScene.stop();
     }
   });
 
