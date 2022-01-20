@@ -12,7 +12,6 @@ import FullPageScroll from './modules/full-page-scroll';
 
 // utils
 import animateLetters from './utils/animate-letters';
-import reloadSvgAnimation from './utils/reload-svg-animation';
 
 // init modules
 mobileHeight();
@@ -29,12 +28,7 @@ game();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 document.body.addEventListener(`screenChanged`, (evt) => {
-  const {screenName} = evt.detail;
   const {classList} = document.body;
-
-  if (screenName === `prizes`) {
-    reloadSvgAnimation(`.prizes__item img`);
-  }
 
   classList.forEach((klass) => {
     if (klass !== `loaded`) {
