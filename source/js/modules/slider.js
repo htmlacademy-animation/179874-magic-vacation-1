@@ -96,13 +96,13 @@ export default () => {
         on: {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
-              storyScene.setBackground(0);
+              storyScene.changeScene(0);
             } else if (storySlider.activeIndex === 2) {
-              storyScene.setBackground(1);
+              storyScene.changeScene(1);
             } else if (storySlider.activeIndex === 4) {
-              storyScene.setBackground(2);
+              storyScene.changeScene(2);
             } else if (storySlider.activeIndex === 6) {
-              storyScene.setBackground(3);
+              storyScene.changeScene(3);
             }
 
             emitSliderChangeEvent(storySlider.activeIndex);
