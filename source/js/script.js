@@ -9,10 +9,8 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import game from './modules/game.js';
 import prizes from './modules/prizes.js';
+import intro from './modules/intro.js';
 import FullPageScroll from './modules/full-page-scroll';
-
-// utils
-import animateLetters from './utils/animate-letters';
 
 // init modules
 mobileHeight();
@@ -25,8 +23,9 @@ form();
 social();
 game();
 prizes();
+intro();
 
-// page scroll
+// init page scroll
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
@@ -46,8 +45,3 @@ document.body.addEventListener(`screenChanged`, (evt) => {
   });
 });
 
-// animate titles letters
-const animationNodes = document.querySelectorAll(`.js-animate-letters`);
-const introDateNode = document.querySelector(`.intro__info .js-animate-letters`);
-animationNodes.forEach((node) => animateLetters(node, 0.5));
-animateLetters(introDateNode, 1.5);
