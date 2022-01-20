@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export default class SliderScene {
+export default class StoryScene {
   constructor() {
     this._innerWidth = window.innerWidth;
     this._innerHeight = window.innerHeight;
