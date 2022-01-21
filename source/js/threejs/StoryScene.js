@@ -7,11 +7,23 @@ export default class StoryScene {
     this.innerHeight = window.innerHeight;
 
     this.canvasSelector = `slider-scene`;
-    this.texturePaths = [
-      `img/module-5/scenes-textures/scene-1.png`,
-      `img/module-5/scenes-textures/scene-2.png`,
-      `img/module-5/scenes-textures/scene-3.png`,
-      `img/module-5/scenes-textures/scene-4.png`,
+    this.textures = [
+      {
+        src: `img/module-5/scenes-textures/scene-1.png`,
+        options: {hueShift: 0.0},
+      },
+      {
+        src: `img/module-5/scenes-textures/scene-2.png`,
+        options: {hueShift: -0.26},
+      },
+      {
+        src: `img/module-5/scenes-textures/scene-3.png`,
+        options: {hueShift: 0.0},
+      },
+      {
+        src: `img/module-5/scenes-textures/scene-4.png`,
+        options: {hueShift: 0.0},
+      },
     ];
     this.textureRatio = 2048 / 1024;
     this.backgroundColor = 0x5f458c;
@@ -50,16 +62,26 @@ export default class StoryScene {
 
     const loadManager = new THREE.LoadingManager();
     const textureLoader = new THREE.TextureLoader(loadManager);
-    const loadedTextures = this.texturePaths.map((texturePath) => textureLoader.load(texturePath));
+    const loadedTextures = this.textures.map((texture) => ({src: textureLoader.load(texture.src), options: texture.options}));
     const geometry = new THREE.PlaneGeometry(1, 1);
 
     loadManager.onLoad = () => {
       loadedTextures.forEach((loadedTexture, index) => {
-        const material = new THREE.RawShaderMaterial(getCustomShaders({map: {value: loadedTexture}}));
+        const customShaders = getCustomShaders({
+          map: {
+            value: loadedTexture.src,
+          },
+          options: {
+            value: loadedTexture.options,
+          },
+        });
+
+        const material = new THREE.RawShaderMaterial(customShaders);
         const image = new THREE.Mesh(geometry, material);
         image.scale.x = this.innerHeight * this.textureRatio;
         image.scale.y = this.innerHeight;
         image.position.x = this._getScenePosition(index);
+
         this.scene.add(image);
       });
     };
